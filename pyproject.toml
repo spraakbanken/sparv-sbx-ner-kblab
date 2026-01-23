@@ -16,3 +16,9 @@ build-backend = "uv_build"
 [tool.uv.build-backend]
 module-name = ["sbx_ner_kb_bert_lowermix_reallysimple_ner"]
 source-exclude = ["/.github", "/docs"]
+
+[dependency-groups]
+test = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
