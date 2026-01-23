@@ -18,6 +18,9 @@ module-name = ["sbx_ner_kb_bert_lowermix_reallysimple_ner"]
 source-exclude = ["/.github", "/docs"]
 
 [dependency-groups]
+dev = [
+    {include-group = "test"},
+]
 test = [
     "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
