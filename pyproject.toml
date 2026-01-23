@@ -1,0 +1,18 @@
+[project]
+name = "sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner"
+version = "0.1.0"
+description = "Sparv plugin to annotate Named Entities using KBLab/bert-base-swedish-lowermix-reallysimple-ner"
+readme = "README.md"
+authors = [
+    { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.9.26,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["sbx_ner_kb_bert_lowermix_reallysimple_ner"]
+source-exclude = ["/.github", "/docs"]
