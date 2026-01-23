@@ -1,0 +1,17 @@
+[govctl]
+schema = 1
+id = "ADR-0001"
+title = "Use UV for project management"
+status = "proposed"
+date = "2026-01-23"
+
+[content]
+context = """
+The project needs a way to manage dependencies
+convieniently and reliable."""
+decision = """
+Use UV for project management."""
+consequences = """
+Positive: Easier to work with than without project manager. Better than other project managers.
+Negative: None
+"""
