@@ -1,0 +1,15 @@
+[govctl]
+schema = 1
+id = "ADR-0002"
+title = "Use spraakbanken/python-uv-ci-conf for CI"
+status = "accepted"
+date = "2026-01-23"
+
+[content]
+context = """
+Stable and extensive CI is valueable for automatic releases
+and PR revision."""
+decision = "Use the CI setup in spraakbanken/python-uv-ci-conf."
+consequences = """
+Positive: Easy setup and updates.
+Negative: All the history from python-uv-ci-conf repo is included."""
