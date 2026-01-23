@@ -21,6 +21,9 @@ source-exclude = ["/.github", "/docs"]
 dev = [
     {include-group = "test"},
 ]
+lint = [
+    "ruff>=0.14.14",
+]
 test = [
     "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
