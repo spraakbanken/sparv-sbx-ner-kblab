@@ -57,8 +57,8 @@ help:
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := "<REPO-NAME-HERE>"
-PROJECT_SRC := "<SRC-FOLDER-HERE>"
+REPO := spraakbanken/sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
+PROJECT_SRC := src/sbx_ner_kb_bert_lowermix_reallysimple_ner
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
