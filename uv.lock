@@ -204,6 +204,8 @@ source = { editable = "." }
 dev = [
     { name = "pytest" },
     { name = "pytest-cov" },
+    { name = "ruff" },
+    { name = "ty" },
 ]
 lint = [
     { name = "ruff" },
@@ -220,6 +222,8 @@ test = [
 dev = [
     { name = "pytest", specifier = ">=9.0.2" },
     { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "ruff", specifier = ">=0.14.14" },
+    { name = "ty", specifier = ">=0.0.13" },
 ]
 lint = [
     { name = "ruff", specifier = ">=0.14.14" },
