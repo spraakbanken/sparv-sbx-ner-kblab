@@ -1,0 +1,21 @@
+[govctl]
+schema = 1
+id = "WI-2026-01-28-001"
+title = "Use HuggingFace pipeline"
+status = "active"
+created = "2026-01-28"
+started = "2026-01-28"
+refs = ["ADR-0003"]
+
+[content]
+description = "Add NER pipeline that uses HuggingFace pipeline."
+
+[[content.acceptance_criteria]]
+text = "add pipeline using HuggingFace"
+status = "pending"
+category = "added"
+
+[[content.acceptance_criteria]]
+text = "tests pass"
+status = "pending"
+category = "fixed"
