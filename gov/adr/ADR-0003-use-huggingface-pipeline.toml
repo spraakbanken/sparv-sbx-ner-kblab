@@ -1,0 +1,21 @@
+[govctl]
+schema = 1
+id = "ADR-0003"
+title = "Use huggingface pipeline"
+status = "accepted"
+date = "2026-01-28"
+
+[content]
+context = "We want to use a model hosted at HuggingFace, and we want a way to use that model."
+decision = "We decided to use HuggingFace pipeline as it is easy to start with."
+consequences = """
+Positive: Easy to use.
+Negative: Gives less control over the model usage."""
+
+[[content.alternatives]]
+text = "Use HuggingFace pipeline"
+status = "accepted"
+
+[[content.alternatives]]
+text = "Use PyTorch directly"
+status = "considered"
