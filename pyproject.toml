@@ -7,7 +7,9 @@ authors = [
     { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "sparv>=5.3.1",
+]
 
 [build-system]
 requires = ["uv_build>=0.9.26,<0.10.0"]
