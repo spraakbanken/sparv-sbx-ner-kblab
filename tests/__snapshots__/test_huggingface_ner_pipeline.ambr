@@ -1,0 +1,121 @@
+# serializer version: 1
+# name: test_run_nlp_on_sentence[artisterna]
+  list([
+    dict({
+      'end': 36,
+      'entity': 'PRS',
+      'index': 6,
+      'score': np.float32(0.9996063),
+      'start': 31,
+      'word': 'Tu',
+    }),
+    dict({
+      'end': 45,
+      'entity': 'PRS',
+      'index': 9,
+      'score': np.float32(0.9949393),
+      'start': 39,
+      'word': 'Do',
+    }),
+    dict({
+      'end': 55,
+      'entity': 'PRS',
+      'index': 12,
+      'score': np.float32(0.9998348),
+      'start': 50,
+      'word': 'Ki',
+    }),
+    dict({
+      'end': 66,
+      'entity': 'PRS',
+      'index': 15,
+      'score': np.float32(0.9998666),
+      'start': 56,
+      'word': 'Danielsson',
+    }),
+  ])
+# ---
+# name: test_run_nlp_on_sentence[belarusen]
+  list([
+    dict({
+      'end': 63,
+      'entity': 'PRS',
+      'index': 13,
+      'score': np.float32(0.9998746),
+      'start': 58,
+      'word': 'Roman',
+    }),
+    dict({
+      'end': 75,
+      'entity': 'PRS',
+      'index': 14,
+      'score': np.float32(0.9999068),
+      'start': 64,
+      'word': 'Pro',
+    }),
+    dict({
+      'end': 99,
+      'entity': 'PRS',
+      'index': 21,
+      'score': np.float32(0.99984944),
+      'start': 94,
+      'word': 'Sofia',
+    }),
+    dict({
+      'end': 106,
+      'entity': 'PRS',
+      'index': 22,
+      'score': np.float32(0.99987495),
+      'start': 100,
+      'word': 'Sap',
+    }),
+  ])
+# ---
+# name: test_run_nlp_on_sentence[det-b\xf6rjar]
+  list([
+  ])
+# ---
+# name: test_run_nlp_on_sentence[internet]
+  list([
+  ])
+# ---
+# name: test_run_nlp_on_sentence[kvinnolobby]
+  list([
+    dict({
+      'end': 15,
+      'entity': 'PRS',
+      'index': 3,
+      'score': np.float32(0.9998827),
+      'start': 10,
+      'word': 'Clara',
+    }),
+    dict({
+      'end': 24,
+      'entity': 'PRS',
+      'index': 4,
+      'score': np.float32(0.9998797),
+      'start': 16,
+      'word': 'Berglund',
+    }),
+    dict({
+      'end': 59,
+      'entity': 'ORG',
+      'index': 10,
+      'score': np.float32(0.96254283),
+      'start': 51,
+      'word': 'Sveriges',
+    }),
+    dict({
+      'end': 71,
+      'entity': 'ORG',
+      'index': 11,
+      'score': np.float32(0.99764293),
+      'start': 60,
+      'word': 'kvinno',
+    }),
+  ])
+# ---
+# name: test_run_nlp_on_sentence[street-race]
+  list([
+  ])
+# ---
