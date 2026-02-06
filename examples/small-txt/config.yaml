@@ -1,0 +1,20 @@
+metadata:
+  id: example-small-txt
+  language: swe
+
+import:
+  importer: text_import:parse
+
+# sbx_sentence_sentiment_kb_sent:
+# num_decimals: 3
+
+export:
+  annotations:
+    - <sentence>
+    # - <token:word>
+    # - <token>:stanza.pos
+    - <token>:sbx_ner_kb_bert_lowermix_reallysimple_ner.ne_type
+    - <token>:sbx_ner_kb_bert_lowermix_reallysimple_ner.ne_score
+
+sparv:
+  compression: none
