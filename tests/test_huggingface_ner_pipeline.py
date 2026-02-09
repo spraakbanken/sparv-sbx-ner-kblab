@@ -1,7 +1,7 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
-from sbx_ner_kb_bert_lowermix_reallysimple_ner.huggingface_ner_pipeline import (
+from sbx_ner_kblab.huggingface_ner_pipeline import (
     HuggingFaceNerPipeline,
     # interleave_tags_and_sentence,
     # interleave_tags_and_tokens,

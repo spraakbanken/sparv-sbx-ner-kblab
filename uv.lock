@@ -1622,7 +1622,7 @@ wheels = [
 ]
 
 [[package]]
-name = "sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner"
+name = "sparv-sbx-ner-kblab"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

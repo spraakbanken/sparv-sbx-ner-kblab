@@ -6,8 +6,8 @@ from sparv.api import Annotation, Output, get_logger
 from transformers import AutoModelForTokenClassification, AutoTokenizer, pipeline
 from transformers.pipelines.token_classification import TokenClassificationPipeline
 
-from sbx_ner_kb_bert_lowermix_reallysimple_ner import constants
-from sbx_ner_kb_bert_lowermix_reallysimple_ner.ner_pipeline import NerPipeline
+from sbx_ner_kblab import constants
+from sbx_ner_kblab.ner_pipeline import NerPipeline
 
 logger = get_logger(__name__)
 

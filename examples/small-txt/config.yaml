@@ -13,8 +13,8 @@ export:
     - <sentence>
     # - <token:word>
     # - <token>:stanza.pos
-    - <token>:sbx_ner_kb_bert_lowermix_reallysimple_ner.ne_type
-    - <token>:sbx_ner_kb_bert_lowermix_reallysimple_ner.ne_score
+    - <token>:sbx_ner_kblab.bert_lowermix_reallysimple_ner_ne_type
+    - <token>:sbx_ner_kblab.bert_lowermix_reallysimple_ner_ne_score
 
 sparv:
   compression: none

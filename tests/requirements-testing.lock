@@ -174,7 +174,7 @@ packaging==26.0
     #   sparv
     #   transformers
 parallel-corpus==0.2.0
-    # via sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
+    # via sparv-sbx-ner-kblab
 platformdirs==4.5.1
     # via jupyter-core
 pluggy==1.6.0
@@ -249,7 +249,7 @@ safetensors==0.7.0
     # via transformers
 setuptools==80.10.2
     # via
-    #   sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
+    #   sparv-sbx-ner-kblab
     #   torch
 shellingham==1.5.4
     # via huggingface-hub
@@ -262,7 +262,7 @@ smmap==5.0.2
 snakemake==7.32.3
     # via sparv
 sparv==5.3.1
-    # via sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
+    # via sparv-sbx-ner-kblab
 stanza==1.10.1
     # via sparv
 stopit==1.1.2
@@ -297,7 +297,7 @@ traitlets==5.14.3
     #   jupyter-core
     #   nbformat
 transformers==5.0.0
-    # via sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
+    # via sparv-sbx-ner-kblab
 triton==3.6.0 ; platform_machine == 'x86_64' and sys_platform == 'linux'
     # via torch
 ty==0.0.13

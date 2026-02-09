@@ -11,8 +11,8 @@ from sparv.api import (
     get_logger,
 )
 
-from sbx_ner_kb_bert_lowermix_reallysimple_ner.constants import PROJECT_NAME
-from sbx_ner_kb_bert_lowermix_reallysimple_ner.ner_pipeline import NerPipeline
+from sbx_ner_kblab.constants import PROJECT_NAME
+from sbx_ner_kblab.ner_pipeline import NerPipeline
 
 logger = get_logger(__name__)
 
@@ -24,7 +24,7 @@ TOK_SEP = " "
 def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
     """Load the request pipeline."""
     # from sbx_named_entities_kb_ner.custom_ner_pipeline import CustomNerPipeline
-    from sbx_ner_kb_bert_lowermix_reallysimple_ner.huggingface_ner_pipeline import (  # noqa: PLC0415
+    from sbx_ner_kblab.huggingface_ner_pipeline import (  # noqa: PLC0415
         HuggingFaceNerPipeline,
     )
 
@@ -36,7 +36,7 @@ def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
 
 
 @annotator(
-    "Named entity tagging with KB-BERT-NER",
+    "Named entity tagging with KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",
     language=["swe"],
     preloader=ner_pipeline_preloader,
     preloader_params=["pipeline"],
@@ -45,16 +45,16 @@ def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
         Config(f"{PROJECT_NAME}.pipeline", description="HuggingFace pipeline to use"),
     ],
 )
-def annotate(
+def annotate_with_bert_base_swedish_lowermix_reallysimple_ner(
     out_ne_type: Output = Output(
-        f"<token>:{PROJECT_NAME}.ne_type",
+        f"<token>:{PROJECT_NAME}.bert_base_swedish_lowermix_reallysimple_ner_ne_type",
         cls="named_entity",
-        description="Named entity segment types from KB-BERT-NER",
+        description="Named entity segment types from KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",  # noqa: E501
     ),
     out_ne_score: Output = Output(
-        f"<token>:{PROJECT_NAME}.ne_score",
+        f"<token>:{PROJECT_NAME}.bert_base_swedish_lowermix_reallysimple_ner_ne_score",
         cls="named_entity",
-        description="Named entity segment types from KB-BERT-NER",
+        description="Named entity segment types from KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",  # noqa: E501
     ),
     word: Annotation = Annotation("<token:word>"),
     sentence: Annotation = Annotation("<sentence>"),
