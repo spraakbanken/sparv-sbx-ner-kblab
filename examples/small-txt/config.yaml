@@ -5,8 +5,8 @@ metadata:
 import:
   importer: text_import:parse
 
-# sbx_sentence_sentiment_kb_sent:
-# num_decimals: 3
+sbx_ner_kblab:
+  num_decimals: 5
 
 export:
   annotations:

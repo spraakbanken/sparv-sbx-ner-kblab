@@ -1,7 +1,5 @@
 """Annotators for Sparv."""
 
-import typing as t
-
 from sparv.api import (
     Annotation,
     Config,
@@ -21,7 +19,7 @@ SENT_SEP = "\n"
 TOK_SEP = " "
 
 
-def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
+def ner_pipeline_preloader(pipeline: str, *, num_decimals: int) -> NerPipeline:
     """Load the request pipeline."""
     # from sbx_named_entities_kb_ner.custom_ner_pipeline import CustomNerPipeline
     from sbx_ner_kblab.huggingface_ner_pipeline import (  # noqa: PLC0415
@@ -29,7 +27,7 @@ def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
     )
 
     if pipeline == "huggingface_ner":
-        return t.cast(NerPipeline, HuggingFaceNerPipeline())
+        return HuggingFaceNerPipeline(num_decimals=num_decimals)
     # if pipeline == "custom_ner":
     #     return t.cast(NerPipeline, CustomNerPipeline())
     raise SparvErrorMessage(f"Unknown pipeline '{pipeline}'")
@@ -39,10 +37,11 @@ def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
     "Named entity tagging with KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",
     language=["swe"],
     preloader=ner_pipeline_preloader,
-    preloader_params=["pipeline"],
+    preloader_params=["pipeline", "num_decimals"],
     preloader_target="model_preloaded",
     config=[
         Config(f"{PROJECT_NAME}.pipeline", description="HuggingFace pipeline to use"),
+        Config(f"{PROJECT_NAME}.num_decimals", description="number of decimals to use in score"),
     ],
 )
 def annotate_with_hf_bert_base_swedish_lowermix_reallysimple_ner(
@@ -59,19 +58,20 @@ def annotate_with_hf_bert_base_swedish_lowermix_reallysimple_ner(
     word: Annotation = Annotation("<token:word>"),
     sentence: Annotation = Annotation("<sentence>"),
     pipeline: str = Config(f"{PROJECT_NAME}.pipeline", default="huggingface_ner"),
-    model_preloaded: t.Any | None = None,
+    num_decimals: int = Config(f"{PROJECT_NAME}.num_decimals", datatype=int, default=8),  # ty:ignore[invalid-parameter-default]
+    model_preloaded: NerPipeline | None = None,
 ) -> None:
     """Annotate a sentence with Named Entities."""
     logger.info("huggingface_ner_pipeline")
 
     if model_preloaded is not None:
-        ner_pipeline: NerPipeline = t.cast(NerPipeline, model_preloaded)
+        ner_pipeline: NerPipeline = model_preloaded
     else:
         logger.info(
             "loading ner pipeline(pipeline=%s)",
             pipeline,
         )
-        ner_pipeline: NerPipeline = ner_pipeline_preloader(pipeline)
+        ner_pipeline: NerPipeline = ner_pipeline_preloader(pipeline, num_decimals=num_decimals)
 
     ner_pipeline.run(sentence, word, out_ne_type, out_ne_score)
 

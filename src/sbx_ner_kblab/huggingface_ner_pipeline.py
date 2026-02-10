@@ -17,12 +17,26 @@ logger = get_logger(__name__)
 SENT_SEP = "\n"
 TOK_SEP = " "
 
+SCORE_FORMATS = {
+    1: "{:.1f}",
+    2: "{:.2f}",
+    3: "{:.3f}",
+    4: "{:.4f}",
+    5: "{:.5f}",
+    6: "{:.6f}",
+    7: "{:.7f}",
+    8: "{:.8f}",
+    9: "{:.9f}",
+    10: "{:.10f}",
+}
+
 
 class HuggingFaceNerPipeline(NerPipeline):
     """A NER pipeline that uses HuggingFace pipeline."""
 
-    def __init__(self) -> None:
+    def __init__(self, *, num_decimals: int = 5) -> None:
         """Create a HuggingFaceNerPipeline."""
+        self.num_decimals = num_decimals
         _configure_third_party_loggers(show_progress=False)
         logger.warning("Load tokenizer")
         self.tokenizer = AutoTokenizer.from_pretrained(
@@ -51,6 +65,7 @@ class HuggingFaceNerPipeline(NerPipeline):
         out_type_annotation = word.create_empty_attribute()
         out_score_annotation = word.create_empty_attribute()
 
+        score_format = SCORE_FORMATS[self.num_decimals]
         for sent in sentences:
             sent_to_tag = TOK_SEP.join(token_word[token_index] for token_index in sent)
 
@@ -58,6 +73,7 @@ class HuggingFaceNerPipeline(NerPipeline):
                 _run_nlp_on_sentence(self.model_pipeline, sent_to_tag),
                 token_word,
                 sent,  # sent_to_tag
+                score_format=score_format,
             ):
                 out_type_annotation[token_index] = tag
                 out_score_annotation[token_index] = score
@@ -151,6 +167,8 @@ def _align_tags_and_tokens(
     tokens: list[dict],
     token_word: list[str],
     sent: list[int],  # , sentence: str
+    *,
+    score_format: str,
 ) -> Iterable[tuple[int, str, str]]:
     # ) -> Iterable[TaggedToken]:
     # logger.info("align_tags_and_tokens.tokens = %s", tokens)
@@ -171,7 +189,7 @@ def _align_tags_and_tokens(
             yield (
                 curr_sent,
                 _translate_tag(tokens[curr_token]["entity"]),
-                str(tokens[curr_token]["score"]),
+                score_format.format(tokens[curr_token]["score"]),
             )
 
             curr_token += 1
