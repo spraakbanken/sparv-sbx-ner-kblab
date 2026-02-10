@@ -156,7 +156,9 @@ jobs:
       - name: Install dependencies
         run: make install-dev
 
-      - name: Run tests for coverage
+      - name: Setup Sparv
+        run: echo "" | uv run sparv setup
+      - name: Run test for example ${{ matrix.example }}
         run: make test-example-${{ matrix.example }}
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
