@@ -1,4 +1,6 @@
+import numpy as np
 import pytest
+from syrupy import matchers as syrupy_matchers
 from syrupy.assertion import SnapshotAssertion
 
 from sbx_ner_kblab.huggingface_ner_pipeline import (
@@ -56,7 +58,7 @@ def test_run_nlp_on_sentence(
     # token_word = sentence.split(" ")
     nlp = HuggingFaceNerPipeline()
     # sent = list(range(len(token_word)))
-    actual = _run_nlp_on_sentence(nlp.model_pipeline, sentence)
+    actual_list = _run_nlp_on_sentence(nlp.model_pipeline, sentence)
     # result = interleave_tags_and_tokens(
     #     run_nlp_on_sentence(sentence),
     #     token_word,
@@ -64,4 +66,6 @@ def test_run_nlp_on_sentence(
     # )
     # tags = [(t[0], t[1]) for t in result]
     # assert tags == expected_tags
-    assert actual == snapshot
+    matcher = syrupy_matchers.path_type({"score": (np.float32,)})
+    for actual in actual_list:
+        assert actual == snapshot(matcher=matcher)
