@@ -4,10 +4,10 @@
     <token>Stora</token>
     <token>regnmängder</token>
     <token>väntas</token>
-    <token ne_score="0.9996569" ne_type="TME">under</token>
-    <token ne_score="0.9996455" ne_type="TME">måndagen</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.9996569" hf_bert_base_swe_lm_rs_ner_ne_type="TME">under</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.9996455" hf_bert_base_swe_lm_rs_ner_ne_type="TME">måndagen</token>
     <token>och</token>
-    <token ne_score="0.9992065" ne_type="ORG">SMHI</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.9992065" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">SMHI</token>
     <token>har</token>
     <token>utfärdat</token>
     <token>en</token>
@@ -38,12 +38,12 @@
     <token>här</token>
     <token>,</token>
     <token>säger</token>
-    <token ne_score="0.9998499" ne_type="PRS">Anders</token>
-    <token ne_score="0.99984443" ne_type="PRS">Persson</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.9998499" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Anders</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99984443" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Persson</token>
     <token>till</token>
-    <token ne_score="0.98401225" ne_type="ORG">SVT</token>
-    <token ne_score="0.9472385" ne_type="ORG">Nyheter</token>
-    <token ne_score="0.84729666" ne_type="ORG">Småland</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.98401225" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">SVT</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.9472385" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">Nyheter</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.84729666" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">Småland</token>
     <token>.</token>
   </sentence>
   <sentence>
@@ -62,7 +62,7 @@
     <token>plats</token>
     <token>,</token>
     <token>säger</token>
-    <token ne_score="0.999821" ne_type="PRS">Garborg</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.999821" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Garborg</token>
     <token>.</token>
   </sentence>
 </text>

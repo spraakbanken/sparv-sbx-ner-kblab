@@ -45,14 +45,14 @@ def ner_pipeline_preloader(pipeline: str) -> NerPipeline:
         Config(f"{PROJECT_NAME}.pipeline", description="HuggingFace pipeline to use"),
     ],
 )
-def annotate_with_bert_base_swedish_lowermix_reallysimple_ner(
+def annotate_with_hf_bert_base_swedish_lowermix_reallysimple_ner(
     out_ne_type: Output = Output(
-        f"<token>:{PROJECT_NAME}.bert_base_swedish_lowermix_reallysimple_ner_ne_type",
+        f"<token>:{PROJECT_NAME}.hf_bert_base_swe_lm_rs_ner_ne_type",
         cls="named_entity",
         description="Named entity segment types from KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",  # noqa: E501
     ),
     out_ne_score: Output = Output(
-        f"<token>:{PROJECT_NAME}.bert_base_swedish_lowermix_reallysimple_ner_ne_score",
+        f"<token>:{PROJECT_NAME}.hf_bert_base_swe_lm_rs_ner_ne_score",
         cls="named_entity",
         description="Named entity segment types from KBLab/bert-base-lowermix-swedish-lowermix-reallysimple-ner",  # noqa: E501
     ),
