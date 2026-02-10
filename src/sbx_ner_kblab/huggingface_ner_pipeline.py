@@ -1,7 +1,9 @@
 """NER pipeline using HuggingFace pipeline."""
 
+import logging
 from collections.abc import Callable, Iterable
 
+from huggingface_hub.utils import logging as hf_logging
 from sparv.api import Annotation, Output, get_logger
 from transformers import AutoModelForTokenClassification, AutoTokenizer, pipeline
 from transformers.pipelines.token_classification import TokenClassificationPipeline
@@ -21,12 +23,16 @@ class HuggingFaceNerPipeline(NerPipeline):
 
     def __init__(self) -> None:
         """Create a HuggingFaceNerPipeline."""
+        _configure_third_party_loggers(show_progress=False)
+        logger.warning("Load tokenizer")
         self.tokenizer = AutoTokenizer.from_pretrained(
             constants.TOKENIZER_NAME, revision=constants.TOKENIZER_REVISION
         )
+        logger.warning("Load model")
         self.model = AutoModelForTokenClassification.from_pretrained(
             constants.MODEL_NAME, revision=constants.MODEL_REVISION
         )
+        logger.warning("Load model_pipeline")
         self.model_pipeline: TokenClassificationPipeline = pipeline(
             "token-classification", model=self.model, tokenizer=self.tokenizer
         )
@@ -199,3 +205,22 @@ TAGS = {"PER": "PRS"}
 
 def _translate_tag(tag: str) -> str:
     return TAGS.get(tag) or tag
+
+
+def _configure_third_party_loggers(*, show_progress: bool = False) -> None:
+    from huggingface_hub.utils.tqdm import disable_progress_bars  # noqa: PLC0415
+
+    if not show_progress:
+        disable_progress_bars()
+    disable_progress_bars()
+    for logger_name in [
+        "transformers",
+        "huggingface_hub",
+        "nlp",
+        "torch",
+        "tensorflow",
+        "tensorboard",
+        "torch.nn",
+    ]:
+        logging.getLogger(logger_name).setLevel(logging.ERROR)
+    hf_logging.set_verbosity(hf_logging.ERROR)
