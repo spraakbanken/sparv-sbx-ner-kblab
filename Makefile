@@ -57,8 +57,8 @@ help:
 	@echo ""
 
 PLATFORM := `uname -o`
-REPO := spraakbanken/sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner
-PROJECT_SRC := src/sbx_ner_kb_bert_lowermix_reallysimple_ner
+REPO := spraakbanken/sparv-sbx-ner-kblab
+PROJECT_SRC := src/sbx_ner_kblab
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
@@ -171,3 +171,14 @@ snapshot-update:
 	${INVENV} pytest --snapshot-update
 
 ### === project targets below this line ===
+test-example-small-txt:
+	rm -rf examples/small-txt/export examples/small-txt/sparv-workdir .snakemake
+	cd examples/small-txt; ${INVENV} sparv run --stats
+	diff assets/small-txt/small_export.gold.xml \
+	    examples/small-txt/export/xml_export.pretty/small_export.xml
+
+update-example-small-txt-snapshot: assets/small-txt/small_export.gold.xml
+
+assets/small-txt/small_export.gold.xml: examples/small-txt/export/xml_export.pretty/small_export.xml
+	@mkdir -pv $(shell dirname "$@")
+	@cp $< $@
