@@ -1,4 +1,88 @@
 # serializer version: 1
+# name: test_run__align_tags_and_token_nlp_on_sentence[artisterna]
+  list([
+    tuple(
+      5,
+      'PRS',
+      '0.999606',
+    ),
+    tuple(
+      7,
+      'PRS',
+      '0.994939',
+    ),
+    tuple(
+      9,
+      'PRS',
+      '0.999835',
+    ),
+    tuple(
+      10,
+      'PRS',
+      '0.999867',
+    ),
+  ])
+# ---
+# name: test_run__align_tags_and_token_nlp_on_sentence[belarusen]
+  list([
+    tuple(
+      9,
+      'PRS',
+      '0.999875',
+    ),
+    tuple(
+      10,
+      'PRS',
+      '0.999907',
+    ),
+    tuple(
+      14,
+      'PRS',
+      '0.999849',
+    ),
+    tuple(
+      15,
+      'PRS',
+      '0.999875',
+    ),
+  ])
+# ---
+# name: test_run__align_tags_and_token_nlp_on_sentence[det-b\xf6rjar]
+  list([
+  ])
+# ---
+# name: test_run__align_tags_and_token_nlp_on_sentence[internet]
+  list([
+  ])
+# ---
+# name: test_run__align_tags_and_token_nlp_on_sentence[kvinnolobby]
+  list([
+    tuple(
+      2,
+      'PRS',
+      '0.999883',
+    ),
+    tuple(
+      3,
+      'PRS',
+      '0.999880',
+    ),
+    tuple(
+      9,
+      'ORG',
+      '0.962543',
+    ),
+    tuple(
+      10,
+      'ORG',
+      '0.997643',
+    ),
+  ])
+# ---
+# name: test_run__align_tags_and_token_nlp_on_sentence[street-race]
+  list([
+  ])
+# ---
 # name: test_run_nlp_on_sentence[artisterna]
   dict({
     'end': 36,

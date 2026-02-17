@@ -5,6 +5,7 @@ from syrupy.assertion import SnapshotAssertion
 
 from sbx_ner_kblab.huggingface_ner_pipeline import (
     HuggingFaceNerPipeline,
+    _align_tags_and_tokens,  # noqa: PLC2701
     # interleave_tags_and_sentence,
     # interleave_tags_and_tokens,
     _run_nlp_on_sentence,  # noqa: PLC2701
@@ -69,3 +70,39 @@ def test_run_nlp_on_sentence(
     matcher = syrupy_matchers.path_type({"score": (np.float32,)})
     for actual in actual_list:
         assert actual == snapshot(matcher=matcher)
+
+
+@pytest.mark.parametrize(
+    "sentence_name",
+    [
+        "belarusen",
+        "det-börjar",
+        "artisterna",
+        "street-race",
+        "kvinnolobby",
+        "internet",
+    ],
+)
+def test_run__align_tags_and_token_nlp_on_sentence(
+    sentence_name: str,
+    snapshot: SnapshotAssertion,
+) -> None:
+    sentence = SENTENCES[sentence_name]
+    token_word = sentence.split(" ")
+    nlp = HuggingFaceNerPipeline()
+    sent = list(range(len(token_word)))
+    actual_list = list(
+        _align_tags_and_tokens(
+            _run_nlp_on_sentence(nlp.model_pipeline, sentence),
+            token_word,
+            sent,
+            score_format="{:3f}",
+        )
+    )
+
+    # tags = [(t[0], t[1]) for t in result]
+    # assert tags == expected_tags
+    assert actual_list == snapshot
+    # matcher = syrupy_matchers.path_type({"score": (np.float32,)})
+    # for actual in actual_list:
+    #     assert actual == snapshot(matcher=matcher)
