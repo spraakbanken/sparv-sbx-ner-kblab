@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<text>
+  <sentence>
+    <token>Stora</token>
+    <token>regnmängder</token>
+    <token>väntas</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99966" hf_bert_base_swe_lm_rs_ner_ne_type="TME">under</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99965" hf_bert_base_swe_lm_rs_ner_ne_type="TME">måndagen</token>
+    <token>och</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99921" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">SMHI</token>
+    <token>har</token>
+    <token>utfärdat</token>
+    <token>en</token>
+    <token>gul</token>
+    <token>varning</token>
+    <token>för</token>
+    <token>skyfallsliknande</token>
+    <token>regn</token>
+    <token>över</token>
+    <token>stora</token>
+    <token>delar</token>
+    <token>av</token>
+    <token>landets</token>
+    <token>södra</token>
+    <token>halva</token>
+    <token>.</token>
+  </sentence>
+  <sentence>
+    <token>Jag</token>
+    <token>är</token>
+    <token>förvånad</token>
+    <token>,</token>
+    <token>chockad</token>
+    <token>och</token>
+    <token>bestört</token>
+    <token>över</token>
+    <token>det</token>
+    <token>här</token>
+    <token>,</token>
+    <token>säger</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99985" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Anders</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99984" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Persson</token>
+    <token>till</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.98401" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">SVT</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.94724" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">Nyheter</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.84730" hf_bert_base_swe_lm_rs_ner_ne_type="ORG">Småland</token>
+    <token>.</token>
+  </sentence>
+  <sentence>
+    <token>Vi</token>
+    <token>hoppas</token>
+    <token>och</token>
+    <token>tror</token>
+    <token>att</token>
+    <token>detta</token>
+    <token>också</token>
+    <token>snabbt</token>
+    <token>ska</token>
+    <token>kunna</token>
+    <token>komma</token>
+    <token>på</token>
+    <token>plats</token>
+    <token>,</token>
+    <token>säger</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99982" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Garborg</token>
+    <token>.</token>
+  </sentence>
+</text>

@@ -1,32 +1,41 @@
 [project]
-name = "sparv-sbx-ner-kb-bert-lowermix-reallysimple-ner"
+name = "sparv-sbx-ner-kblab"
 version = "0.1.0"
 description = "Sparv plugin to annotate Named Entities using KBLab/bert-base-swedish-lowermix-reallysimple-ner"
 readme = "README.md"
-authors = [
-    { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
-]
 requires-python = ">=3.11"
-dependencies = []
+authors = [
+  { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
+]
+dependencies = [
+  "parallel-corpus>=0.2.0",
+  "setuptools>=80,<81",
+  "sparv>=5.3.1",
+  "transformers>=5.0.0",
+]
+
+[project.entry-points."sparv.plugin"]
+sbx_ner_kblab = "sbx_ner_kblab"
+
+[dependency-groups]
+dev = [
+  { include-group = "lint" },
+  { include-group = "test" },
+]
+lint = [
+  "ruff>=0.14.14",
+  "ty>=0.0.13",
+]
+test = [
+  "pytest>=9.0.2",
+  "pytest-cov>=7.0.0",
+  "syrupy>=5.1.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.9.26,<0.10.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = ["sbx_ner_kb_bert_lowermix_reallysimple_ner"]
+module-name = ["sbx_ner_kblab"]
 source-exclude = ["/.github", "/docs"]
-
-[dependency-groups]
-dev = [
-    {include-group = "lint"},
-    {include-group = "test"},
-]
-lint = [
-    "ruff>=0.14.14",
-    "ty>=0.0.13",
-]
-test = [
-    "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
-]
