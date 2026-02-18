@@ -62,7 +62,7 @@
     <token>plats</token>
     <token>,</token>
     <token>säger</token>
-    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99982" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Garborg</token>
+    <token hf_bert_base_swe_lm_rs_ner_ne_score="0.99973" hf_bert_base_swe_lm_rs_ner_ne_type="PRS">Garborg</token>
     <token>.</token>
   </sentence>
 </text>

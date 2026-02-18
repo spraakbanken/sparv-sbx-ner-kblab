@@ -1,16 +1,10 @@
-import numpy as np
 import pytest
-from syrupy import matchers as syrupy_matchers
 from syrupy.assertion import SnapshotAssertion
 
 from sbx_ner_kblab.huggingface_ner_pipeline import (
     HuggingFaceNerPipeline,
-    # interleave_tags_and_sentence,
-    # interleave_tags_and_tokens,
+    _align_tags_and_tokens,  # noqa: PLC2701
     _run_nlp_on_sentence,  # noqa: PLC2701
-    # run_nlp_on_tokens,
-    # Token,
-    find_word_ending,
 )
 
 SENTENCES = {
@@ -29,17 +23,6 @@ SENTENCES = {
 
 
 @pytest.mark.parametrize(
-    "sentence_name, token_end, expected",
-    [("verksamhetsåret", 21, 21), ("verksamhetsåret", 39, 48), ("encrochat", 28, 30)],
-)
-def test_find_word_ending(sentence_name: str, token_end: int, expected: int) -> None:
-    sentence = SENTENCES[sentence_name]
-
-    assert find_word_ending(sentence, token_end) == expected
-    assert sentence[find_word_ending(sentence, token_end)] == " "
-
-
-@pytest.mark.parametrize(
     "sentence_name",
     [
         "belarusen",
@@ -50,22 +33,24 @@ def test_find_word_ending(sentence_name: str, token_end: int, expected: int) -> 
         "internet",
     ],
 )
-def test_run_nlp_on_sentence(
+def test_run__align_tags_and_token_nlp_on_sentence(
     sentence_name: str,
     snapshot: SnapshotAssertion,
 ) -> None:
     sentence = SENTENCES[sentence_name]
-    # token_word = sentence.split(" ")
+    token_word = sentence.split(" ")
     nlp = HuggingFaceNerPipeline()
-    # sent = list(range(len(token_word)))
-    actual_list = _run_nlp_on_sentence(nlp.model_pipeline, sentence)
-    # result = interleave_tags_and_tokens(
-    #     run_nlp_on_sentence(sentence),
-    #     token_word,
-    #     sent,  # sentence
-    # )
+    actual_list = list(
+        _align_tags_and_tokens(
+            _run_nlp_on_sentence(nlp.model_pipeline, sentence),
+            token_word,
+            score_format="{:3f}",
+        )
+    )
+
     # tags = [(t[0], t[1]) for t in result]
     # assert tags == expected_tags
-    matcher = syrupy_matchers.path_type({"score": (np.float32,)})
-    for actual in actual_list:
-        assert actual == snapshot(matcher=matcher)
+    assert actual_list == snapshot
+    # matcher = syrupy_matchers.path_type({"score": (np.float32,)})
+    # for actual in actual_list:
+    #     assert actual == snapshot(matcher=matcher)
