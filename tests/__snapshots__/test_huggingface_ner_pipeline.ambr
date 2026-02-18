@@ -4,17 +4,17 @@
     tuple(
       5,
       'PRS',
-      '0.999606',
+      '0.999510',
     ),
     tuple(
       7,
       'PRS',
-      '0.994939',
+      '0.993033',
     ),
     tuple(
       9,
       'PRS',
-      '0.999835',
+      '0.999856',
     ),
     tuple(
       10,
@@ -33,7 +33,7 @@
     tuple(
       10,
       'PRS',
-      '0.999907',
+      '0.999882',
     ),
     tuple(
       14,
@@ -43,7 +43,7 @@
     tuple(
       15,
       'PRS',
-      '0.999875',
+      '0.999834',
     ),
   ])
 # ---
@@ -75,131 +75,11 @@
     tuple(
       10,
       'ORG',
-      '0.997643',
+      '0.997631',
     ),
   ])
 # ---
 # name: test_run__align_tags_and_token_nlp_on_sentence[street-race]
   list([
   ])
-# ---
-# name: test_run_nlp_on_sentence[artisterna]
-  dict({
-    'end': 36,
-    'entity': 'PRS',
-    'index': 6,
-    'score': float32,
-    'start': 31,
-    'word': 'Tu',
-  })
-# ---
-# name: test_run_nlp_on_sentence[artisterna].1
-  dict({
-    'end': 45,
-    'entity': 'PRS',
-    'index': 9,
-    'score': float32,
-    'start': 39,
-    'word': 'Do',
-  })
-# ---
-# name: test_run_nlp_on_sentence[artisterna].2
-  dict({
-    'end': 55,
-    'entity': 'PRS',
-    'index': 12,
-    'score': float32,
-    'start': 50,
-    'word': 'Ki',
-  })
-# ---
-# name: test_run_nlp_on_sentence[artisterna].3
-  dict({
-    'end': 66,
-    'entity': 'PRS',
-    'index': 15,
-    'score': float32,
-    'start': 56,
-    'word': 'Danielsson',
-  })
-# ---
-# name: test_run_nlp_on_sentence[belarusen]
-  dict({
-    'end': 63,
-    'entity': 'PRS',
-    'index': 13,
-    'score': float32,
-    'start': 58,
-    'word': 'Roman',
-  })
-# ---
-# name: test_run_nlp_on_sentence[belarusen].1
-  dict({
-    'end': 75,
-    'entity': 'PRS',
-    'index': 14,
-    'score': float32,
-    'start': 64,
-    'word': 'Pro',
-  })
-# ---
-# name: test_run_nlp_on_sentence[belarusen].2
-  dict({
-    'end': 99,
-    'entity': 'PRS',
-    'index': 21,
-    'score': float32,
-    'start': 94,
-    'word': 'Sofia',
-  })
-# ---
-# name: test_run_nlp_on_sentence[belarusen].3
-  dict({
-    'end': 106,
-    'entity': 'PRS',
-    'index': 22,
-    'score': float32,
-    'start': 100,
-    'word': 'Sap',
-  })
-# ---
-# name: test_run_nlp_on_sentence[kvinnolobby]
-  dict({
-    'end': 15,
-    'entity': 'PRS',
-    'index': 3,
-    'score': float32,
-    'start': 10,
-    'word': 'Clara',
-  })
-# ---
-# name: test_run_nlp_on_sentence[kvinnolobby].1
-  dict({
-    'end': 24,
-    'entity': 'PRS',
-    'index': 4,
-    'score': float32,
-    'start': 16,
-    'word': 'Berglund',
-  })
-# ---
-# name: test_run_nlp_on_sentence[kvinnolobby].2
-  dict({
-    'end': 59,
-    'entity': 'ORG',
-    'index': 10,
-    'score': float32,
-    'start': 51,
-    'word': 'Sveriges',
-  })
-# ---
-# name: test_run_nlp_on_sentence[kvinnolobby].3
-  dict({
-    'end': 71,
-    'entity': 'ORG',
-    'index': 11,
-    'score': float32,
-    'start': 60,
-    'word': 'kvinno',
-  })
 # ---
