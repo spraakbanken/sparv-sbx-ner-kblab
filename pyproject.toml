@@ -9,7 +9,7 @@ authors = [
 ]
 dependencies = [
   "parallel-corpus>=0.2.0",
-  "setuptools>=80,<81",
+  "setuptools>=82.0.1,<83",
   "sparv>=5.3.1",
   "transformers>=5.0.0",
 ]
